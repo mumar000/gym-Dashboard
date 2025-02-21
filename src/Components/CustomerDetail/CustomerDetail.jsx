@@ -23,7 +23,7 @@ const CustomerDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://gym-server-k1jq.vercel.app/customerData");
+        const response = await axios.get("https://gym-msserver.vercel.app/customerData");
         if (Array.isArray(response.data.data)) {
           setData(response.data.data);
         } else {
@@ -42,18 +42,18 @@ const CustomerDetails = () => {
 
   // Format date function
   const formatDate = (dateString) => {
-    const date = new Date(dateString);  
+    const date = new Date(dateString);
     return date.toLocaleDateString("en-GB", {
-      day:"2-digit",
-      month:"long",
-      year:"numeric"
+      day: "2-digit",
+      month: "long",
+      year: "numeric"
     });
   };
 
   // Mark as paid function
   const markAsPaid = async (id) => {
     try {
-      await axios.put(`https://gym-server-k1jq.vercel.app/customerData/${id}`, { paymentStatus: "paid" });
+      await axios.put(`https://gym-msserver.vercel.app/customerData${id}`, { paymentStatus: "paid" });
       setData((prevData) =>
         prevData.map((item) =>
           item._id === id ? { ...item, paymentStatus: "paid" } : item
@@ -69,7 +69,7 @@ const CustomerDetails = () => {
   // Delete customer data function
   const deleteData = async (id) => {
     try {
-      await axios.delete(`https://gym-server-k1jq.vercel.app/customerData/${id}`);
+      await axios.delete(`https://gym-msserver.vercel.app/customerData${id}`);
       setData((prevData) => prevData.filter((item) => item._id !== id));
       toast.success("Customer Deleted!");
     } catch (error) {
@@ -193,18 +193,18 @@ const CustomerDetails = () => {
     <div className="container mx-auto px-4 py-6">
       <Toaster />
       <div className="flex flex-row items-center justify-between">
-        <button  
+        <button
           className="text-sm rounded-full  font-bold bg-gray-800 text-white px-3 py-2 mb-3 flex flex-row items-center gap-1"
           onClick={() => openPaymentModal()}
         >
-            Add Payment
+          Add Payment
           <MdOutlinePayments />
         </button>
-      <div className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-        <div className="flex flex-row items-center gap-2 justify-center">
-          Customer Data
-          <IoPersonSharp className="my-1" />
-        </div>
+        <div className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+          <div className="flex flex-row items-center gap-2 justify-center">
+            Customer Data
+            <IoPersonSharp className="my-1" />
+          </div>
         </div>
         <div className="text-sm rounded-full  font-bold bg-gray-800 text-white px-3 py-2 mb-3 flex flex-row items-center gap-1">
           <h1>Add Customer</h1>
@@ -273,16 +273,16 @@ const CustomerDetails = () => {
         </button>
       </div>
 
-      <UserDetailsModal 
-        isOpen={isUserDetailsModalOpen} 
-        onClose={closeUserDetailsModal} 
-        user={selectedUser} 
+      <UserDetailsModal
+        isOpen={isUserDetailsModalOpen}
+        onClose={closeUserDetailsModal}
+        user={selectedUser}
       />
-      <PaymentForm 
+      <PaymentForm
         isOpen={addPayment}
         onClose={closePaymentModal}
         customerData={data}
-      />   
+      />
     </div>
   );
 };
