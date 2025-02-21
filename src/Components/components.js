@@ -1,0 +1,6 @@
+export {default as Login} from './Login/Login'
+export {default as Form} from './Form/Form'
+export {default as CustomerDetails} from './CustomerDetail/CustomerDetail'
+export {default as Hero } from './Hero/Hero'
+export {default as UserDetailsModal } from './CustomerDetail/UserDetailsModal'
+export {default as PaymentForm } from './CustomerDetail/PaymentForm'
