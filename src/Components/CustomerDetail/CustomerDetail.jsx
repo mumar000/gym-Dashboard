@@ -23,7 +23,7 @@ const CustomerDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://gym-ms-backend-five.vercel.app/customerData");
+        const response = await axios.get("https://gym-server-k1jq.vercel.app/customerData");
         if (Array.isArray(response.data.data)) {
           setData(response.data.data);
         } else {
@@ -53,7 +53,7 @@ const CustomerDetails = () => {
   // Mark as paid function
   const markAsPaid = async (id) => {
     try {
-      await axios.put(`https://gym-ms-backend-five.vercel.app/customerData/${id}`, { paymentStatus: "paid" });
+      await axios.put(`https://gym-server-k1jq.vercel.app/customerData/${id}`, { paymentStatus: "paid" });
       setData((prevData) =>
         prevData.map((item) =>
           item._id === id ? { ...item, paymentStatus: "paid" } : item
@@ -69,7 +69,7 @@ const CustomerDetails = () => {
   // Delete customer data function
   const deleteData = async (id) => {
     try {
-      await axios.delete(`https://gym-ms-backend-five.vercel.app/customerData/${id}`);
+      await axios.delete(`https://gym-server-k1jq.vercel.app/customerData/${id}`);
       setData((prevData) => prevData.filter((item) => item._id !== id));
       toast.success("Customer Deleted!");
     } catch (error) {
