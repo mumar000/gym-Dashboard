@@ -23,7 +23,7 @@ const CustomerDetails = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("gym-server-k1jq.vercel.app/customerData");
+        const response = await axios.get("https://gym-server-k1jq.vercel.app/customerData");
         if (Array.isArray(response.data.data)) {
           setData(response.data.data);
         } else {
