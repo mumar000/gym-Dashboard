@@ -9,7 +9,7 @@ export default function DetailForm() {
   const [apiError, setApiError] = useState(null);
 
   const onSubmit = async (data) => {
-    const API_URI = "https://gym-msserver.vercel.app/customerData/";
+    const API_URI = "https://gym-server-k1jq.vercel.app/customerData";
 
     try {
       const response = await axios.post(API_URI, data, {

@@ -52,7 +52,7 @@ const PaymentForm = ({ isOpen, onClose, customerData }) => {
 
   const onSubmit = async (record) => {
     try {
-      const response = await axios.put(`https://gym-msserver.vercel.app/updatePayment/${selectedCustomer._id}`, {
+      const response = await axios.put(`https://gym-server-k1jq.vercel.app/updatePayment/${selectedCustomer._id}`, {
         month: record.month,
         amount: record.fees,
         paymentDate: record.paymentDate,
