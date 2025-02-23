@@ -7,6 +7,7 @@ import toast, { Toaster } from "react-hot-toast";
 import UserDetailsModal from './UserDetailsModal'
 import PaymentForm from "./PaymentForm";
 import { MdOutlinePayments } from "react-icons/md";
+import { Button } from '../Button/Button'
 
 import Modal from "react-modal";
 
