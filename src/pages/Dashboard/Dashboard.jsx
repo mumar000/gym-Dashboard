@@ -14,18 +14,18 @@ export default function Dashboard() {
 
         {/* Navigation Links */}
         <div className="flex  items-center text-gray-800   space-x-6">
-          <Link 
+          {/* <Link 
             to="/form" 
             className="text-lg font-medium  transition ease duration-200"
           >
             Add a Customer
-          </Link>
-          <Link 
+          </Link> */}
+          {/* <Link 
             to="/details" 
             className="text-lg font-medium   transition ease   duration-300"
           >
             Customer Details
-          </Link>
+          </Link> */}
           
         </div>
       </div>

@@ -211,7 +211,7 @@ const CustomerDetails = () => {
       </div>
 
       {/* Displaying customer data as a table */}
-      <div className="overflow-x-auto bg-white shadow-lg rounded-lg border border-gray-200">
+      <div className="overflow-x-auto bg-white shadow-lg my-2 rounded-lg border border-gray-200">
         <table {...getTableProps()} className="min-w-full">
           <thead className="bg-green-800 text-white">
             {headerGroups.map((headerGroup) => (
