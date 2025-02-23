@@ -18,7 +18,10 @@ const Hero = () => {
       </h1>
 
       </div>
-      <Button />
+      <Button 
+        buttonTitle='Customer Details'
+        link={'/details'}
+        />
     </div>
   );
 };

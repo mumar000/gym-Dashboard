@@ -192,30 +192,27 @@ const CustomerDetails = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       <Toaster />
-      <div className="flex flex-row items-center justify-between">
-        <button
-          className="text-sm rounded-full  font-bold bg-gray-800 text-white px-3 py-2 mb-3 flex flex-row items-center gap-1"
-          onClick={() => openPaymentModal()}
-        >
-          Add Payment
-          <MdOutlinePayments />
-        </button>
-        <div className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-          <div className="flex flex-row items-center gap-2 justify-center">
-            Customer Data
-            <IoPersonSharp className="my-1" />
-          </div>
+      <div className="flex md:flex-row flex-col items-center justify-between">
+        <div className="flex  flex-row items-center gap-2 justify-center">
+          <h1 className='md:text-4xl text-2xl font-bold tracking-wide'>Customer Data</h1>
+          {/* <IoPersonSharp className="md:my-1 sm:hidden "  size={25}/> */}
         </div>
-        <div className="text-sm rounded-full  font-bold bg-gray-800 text-white px-3 py-2 mb-3 flex flex-row items-center gap-1">
-          <h1>Add Customer</h1>
-          <MdOutlinePayments />
-        </div>
+        <div className='flex flex-row items-center gap-2 justify-end'>
+        <Button 
+              buttonTitle={'Add Payment'}
+              onClick={() => openPaymentModal()}
+        />
+      <Button 
+            buttonTitle='Add Customers'
+            link={'/form'}
+      />
+      </div>
       </div>
 
       {/* Displaying customer data as a table */}
       <div className="overflow-x-auto bg-white shadow-lg rounded-lg border border-gray-200">
         <table {...getTableProps()} className="min-w-full">
-          <thead className="bg-gray-800 text-white">
+          <thead className="bg-green-800 text-white">
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
@@ -255,7 +252,7 @@ const CustomerDetails = () => {
       {/* Pagination */}
       <div className="flex flex-row gap-2 my-2 items-center justify-center">
         <button
-          className="border px-2 rounded-lg hover:scale-105 cursor-pointer bg-gray-800 text-white"
+          className="border px-2 rounded-lg hover:scale-105 cursor-pointer bg-green-800 text-white"
           disabled={!canPreviousPage}
           onClick={previousPage}
         >
@@ -265,7 +262,7 @@ const CustomerDetails = () => {
           {pageIndex + 1} of {pageCount}
         </span>
         <button
-          className="border px-2 hover:scale-105 cursor-pointer rounded-lg bg-gray-800 text-white"
+          className="border px-2 hover:scale-105 cursor-pointer rounded-lg bg-green-800 text-white"
           disabled={!canNextPage}
           onClick={nextPage}
         >
