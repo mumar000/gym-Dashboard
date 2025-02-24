@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import { TbHistory, TbCurrencyRupee, TbCalendar, TbCheck, TbX, TbCurrencyDollar } from "react-icons/tb";
 import { GoPersonFill } from "react-icons/go";
+import { RxCrossCircled } from "react-icons/rx";
 
 Modal.setAppElement("#root");
 
@@ -41,12 +42,19 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
       {user && (
         <div className="flex flex-col space-y-6">
           {/* Header */}
-          <div className="flex flex-row gap-2 items-center justify-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center bg-gradient-to-r from-green-400 to-green-800 bg-clip-text text-transparent">
-              Payment History
-            </h2>
-            <TbHistory size={30} className="text-black" />
-          </div>
+          <div className="flex flex-row  items-center justify-between">
+            <div className="flex flex-row items-center gap-1 ">
+              <h2 className="text-3xl sm:text-4xl font-bold text-center bg-gradient-to-r from-green-400 to-green-800 bg-clip-text text-transparent">
+                Payment History
+              </h2>
+              <TbHistory size={30} className="text-black" />
+            </div>
+            <RxCrossCircled 
+                      className=' text-red-800 cursor-pointer ' 
+                      size={28}
+                      onClick={onClose}
+            />
+            </div>
 
           {/* User Details */}
           <div className="space-y-4">
@@ -106,14 +114,6 @@ const UserDetailsModal = ({ isOpen, onClose, user }) => {
               </div>
             </div>
           </div>
-
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="mt-6 px-6 py-2 rounded-full bg-gradient-to-r from-green-600 to-green-900 text-white hover:from-green-700 hover:to-green-800 transition-all duration-200 self-center"
-          >
-            Close
-          </button>
         </div>
       )}
     </Modal>

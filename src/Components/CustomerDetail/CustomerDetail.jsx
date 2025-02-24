@@ -8,6 +8,7 @@ import PaymentForm from "./PaymentForm";
 import { Button } from '../components'
 import { FaUserPlus } from "react-icons/fa";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import Modal from "react-modal";
 
@@ -254,21 +255,23 @@ const CustomerDetails = () => {
       {/* Pagination */}
       <div className="flex flex-row gap-2 my-2 items-center justify-center">
         <button
-          className="border px-2 rounded-lg hover:scale-105 cursor-pointer bg-green-800 text-white"
+          className="border px-2 rounded-lg flex flex-row items-center gap-1 hover:scale-105 cursor-pointer bg-green-800 text-white"
           disabled={!canPreviousPage}
           onClick={previousPage}
         >
+        <FaChevronLeft size={10} />
           Prev Page
         </button>
         <span>
           {pageIndex + 1} of {pageCount}
         </span>
         <button
-          className="border px-2 hover:scale-105 cursor-pointer rounded-lg bg-green-800 text-white"
+          className="border px-2 flex flex-row gap-1 items-center hover:scale-105 cursor-pointer rounded-lg bg-green-800 text-white"
           disabled={!canNextPage}
           onClick={nextPage}
         >
           Next Page
+          <FaChevronRight />
         </button>
       </div>
 
