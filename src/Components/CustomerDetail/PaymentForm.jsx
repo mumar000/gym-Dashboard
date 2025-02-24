@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { useForm, Controller } from 'react-hook-form';
 import { useState } from 'react';
 import axios from 'axios';
+import { RxCrossCircled } from 'react-icons/rx';
 
 Modal.setAppElement("#root");
 
