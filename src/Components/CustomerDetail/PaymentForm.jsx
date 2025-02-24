@@ -75,7 +75,14 @@ const PaymentForm = ({ isOpen, onClose, customerData }) => {
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyle} contentLabel='Payment Form'>
       <div className="p-2">
-        <h1 className="text-center text-2xl font-bold mb-6">Payment Recipient</h1>
+      <div className='flex flex-row items-center  justify-between'>
+        <h1 className="text-center text-4xl   from-green-400 to-green-700 font-bold mb-6">Payment Recipient</h1>
+        <RxCrossCircled 
+          className='mb-6 text-red-800 cursor-pointer ' 
+          size={28}
+          onClick={onClose}
+        />
+        </div>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
           <div className="flex flex-col space-y-1">
             <label className="text-sm font-bold text-gray-700">Name</label>
@@ -133,12 +140,6 @@ const PaymentForm = ({ isOpen, onClose, customerData }) => {
               className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
             >
               Submit
-            </button>
-            <button
-              onClick={onClose}
-              className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-blue-600"
-            >
-              Close 
             </button>
           </div>
         </form>
