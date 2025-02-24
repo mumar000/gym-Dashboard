@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 import { useTable, useSortBy, usePagination } from "react-table";
-import { IoPersonSharp } from "react-icons/io5";
 import { GoTrash, GoCheck, GoEye } from "react-icons/go";
 import toast, { Toaster } from "react-hot-toast";
 import UserDetailsModal from './UserDetailsModal'
 import PaymentForm from "./PaymentForm";
-import { MdOutlinePayments } from "react-icons/md";
 import { Button } from '../components'
+import { FaUserPlus } from "react-icons/fa";
+import { FaMoneyCheckDollar } from "react-icons/fa6";
 
 import Modal from "react-modal";
 
@@ -196,16 +196,17 @@ const CustomerDetails = () => {
       <div className="flex md:flex-row flex-col items-center justify-between">
         <div className="flex  flex-row items-center gap-2 justify-center">
           <h1 className='md:text-4xl text-2xl font-bold tracking-wide'>Customer Data</h1>
-          {/* <IoPersonSharp className="md:my-1 sm:hidden "  size={25}/> */}
         </div>
         <div className='flex flex-row items-center gap-2 justify-end'>
         <Button 
               buttonTitle={'Add Payment'}
               onClick={() => openPaymentModal()}
+              icon={<FaMoneyCheckDollar />}
         />
       <Button 
             buttonTitle='Add Customers'
             link={'/form'}
+            icon={<FaUserPlus />}
       />
       </div>
       </div>
