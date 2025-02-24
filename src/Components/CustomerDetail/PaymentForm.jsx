@@ -138,7 +138,7 @@ const PaymentForm = ({ isOpen, onClose, customerData }) => {
           <div className="flex justify-between">
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+              className="px-4 py-2 bg-green-800 text-white rounded-full hover:bg-green-600"
             >
               Submit
             </button>
