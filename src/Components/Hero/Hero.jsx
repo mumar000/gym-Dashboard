@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button } from '../components';
+import { FaChevronRight } from 'react-icons/fa';
 
 const Hero = () => {
   return (
@@ -21,6 +22,7 @@ const Hero = () => {
       <Button 
         buttonTitle='Customer Details'
         link={'/details'}
+        icon={<FaChevronRight /> }
         />
     </div>
   );
