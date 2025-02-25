@@ -9,8 +9,9 @@ import { Button } from '../components'
 import { FaUserPlus } from "react-icons/fa";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
+import Search from "../Login/Search/Search";
 import Modal from "react-modal";
+
 
 
 const CustomerDetails = () => {
@@ -209,6 +210,7 @@ const CustomerDetails = () => {
             link={'/form'}
             icon={<FaUserPlus />}
       />
+      <Search />
       </div>
       </div>
 
@@ -253,9 +255,9 @@ const CustomerDetails = () => {
       </div>
 
       {/* Pagination */}
-      <div className="flex flex-row gap-2 my-2 items-center justify-center">
+      <div className="flex flex-row gap-2 my-2 items-center justify-end">
         <button
-          className="border px-2 rounded-lg flex flex-row items-center gap-1 hover:scale-105 cursor-pointer bg-green-800 text-white"
+          className="border px-3 rounded-lg flex flex-row items-center gap-1 hover:scale-105 cursor-pointer bg-green-800 text-white"
           disabled={!canPreviousPage}
           onClick={previousPage}
         >
