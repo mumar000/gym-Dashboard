@@ -9,7 +9,7 @@ import { Button } from '../components'
 import { FaUserPlus } from "react-icons/fa";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Search from "../Login/Search/Search";
+import {Search } from '../components'
 import Modal from "react-modal";
 
 
