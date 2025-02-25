@@ -143,14 +143,14 @@ const CustomerDetails = () => {
               {(status === "pending" || status === "unpaid") && (
                 <button
                   onClick={() => markAsPaid(row.original._id)}
-                  className="px-1 py-1 flex items-center gap-1 border-green-500 rounded-md hover:bg-green-500 transition duration-200"
+                  className="px-1 py-1 flex items-center gap-1 border-green-500 cursor-pointer rounded-md hover:bg-green-500 transition duration-200"
                 >
                   <GoCheck size={14} />
                 </button>
               )}
               <button
                 onClick={() => openUserDetailsModal(row.original)}
-                className="px-2 py-1 flex items-center gap-1 text-gray-500  border-cyan-500 hover:text-cyan-600 transition duration-200"
+                className="px-2 py-1 flex items-center gap-1 text-gray-500 cursor-pointer   border-cyan-500 hover:text-cyan-600 transition duration-200"
               >
                 <GoEye size={18} />
               </button>
