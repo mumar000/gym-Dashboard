@@ -22,7 +22,8 @@ const customStyle = {
     backgroundColor: "white",
   },
   overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    backdropFilter: "blur(4px)", // Modern blur effect
   },
 };
 
