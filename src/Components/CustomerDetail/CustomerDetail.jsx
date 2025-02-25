@@ -199,7 +199,7 @@ const CustomerDetails = () => {
         <div className="flex  flex-row items-center gap-2 justify-center">
           <h1 className='md:text-4xl text-2xl font-bold tracking-wide'>Customer Data</h1>
         </div>
-        <div className='flex flex-row items-center gap-2 justify-end'>
+        <div className='flex md:flex-row flex-col  items-center gap-2 justify-end'>
         <Button 
               buttonTitle={'Add Payment'}
               onClick={() => openPaymentModal()}
